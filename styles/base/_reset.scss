@@ -1,15 +1,23 @@
+/*# sourceMappingURL=styles.css.map */
+
 * {
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  // 아래 2줄은 폰트 부드럽게
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  // 보통 html은 rem으로 16px기준이어서 선언해준다
+  font-size: $font-size-16;
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  color: $primary;
 }
 
 h1 {
