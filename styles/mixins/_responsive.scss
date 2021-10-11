@@ -16,7 +16,7 @@
 .section {
   @include responsive(T) {
     font-size: 10px;
-    color: red;
+    color: #000;
   }
 }
 
