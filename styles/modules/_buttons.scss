@@ -1,0 +1,102 @@
+%btn-base {
+  @include inline-flexbox;
+  padding: 0 8px;
+  font-weight: 700;
+  border-radius: 4px;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+// style, sizes, states 순서로 선언
+// fill, outlined, ghost
+
+// 1. Note : style
+// .btn-fill-primary
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $blue;
+  transition: background-color 200ms ease-in-out;
+
+  // 3. state
+  //   &:hover
+  &:not(:disabled):hover {
+    background-color: $blue-dark;
+  }
+
+  &:disabled:hover {
+    background-color: $blue;
+  }
+
+  //  공통은 위로 올림
+  //   &:disabled {
+  //     opacity: 0.4;
+  //   }
+}
+
+// disabled 되었을때 hover 효과 안먹기
+// .btn-primary:not(:disabled):hover {
+
+// }
+
+// .btn-fill-secondary
+.btn-secondary {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $border;
+  transition: background-color 200ms ease-in-out;
+
+  // 3. state
+  &:not(:disabled):hover {
+    background-color: $tertiary;
+  }
+}
+
+.btn-outlined {
+  @extend %btn-base;
+  color: $blue;
+  background-color: $white;
+  border: 1px solid $blue;
+  transition: background-color 200ms ease-in-out;
+
+  // 3. state
+  &:not(:disabled):hover {
+    background-color: $blue-light;
+  }
+}
+
+.btn-ghost {
+  @extend %btn-base;
+  color: $primary;
+  background-color: transparent;
+  transition: color 200ms ease-in-out;
+
+  // 3. state
+  &:not(:disabled):hover {
+    color: $secondary;
+  }
+}
+
+// 2. Note : sizes
+.btn-32 {
+  @include text-style(14);
+  height: 32px;
+}
+
+.btn-40 {
+  @include text-style(16);
+  height: 40px;
+}
+
+.btn-48 {
+  @include text-style(16);
+  height: 48px;
+}
+
+.btn-55 {
+  @include text-style(18);
+  height: 55px;
+}
