@@ -13,28 +13,9 @@
       @include flexbox(end);
     }
 
-    .gnb-search-button {
+    .gnb-icon-button.is-search {
       margin-right: 4px;
     }
-  }
-
-  //   &는 == gnb-icon-button
-  &-icon-button {
-    //   좌우정렬
-    @include flexbox;
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-    color: $secondary;
-
-    // i {
-    //   font-size: 24px;
-    //   color: $secondary;
-    // }
-  }
-
-  &-menu-button {
-    color: $blue;
   }
 
   .logo {
