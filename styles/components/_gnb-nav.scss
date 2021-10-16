@@ -1,10 +1,25 @@
 .gnb-nav {
+  $padding: 8px;
+
   &-list {
     @include flexbox(start);
+    // padding: $padding; 이거때문에 생긴 로고 오른쪽 여백 대응
+    // 1. 마이너스 margin으로 좌측으로 땡기기
+    margin-left: -#{$padding};
+    // 2. position: relative를 사용해서 좌측으로 땡기기
+    // position: relative;
+    // left: -#{$padding};
   }
 
   &-item {
-    margin-right: 24px;
+    margin-right: 24px - ($padding * 2);
+
+    &.is-active,
+    &:hover {
+      a {
+        color: $blue;
+      }
+    }
 
     &:last-child {
       margin-right: 0;
@@ -12,6 +27,8 @@
 
     a {
       @include text-style(18, $primary);
+      display: block;
+      padding: $padding;
       font-weight: 700;
     }
   }
